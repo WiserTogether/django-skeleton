@@ -6,4 +6,3 @@ django==1.6
 djangorestframework
 psycopg2
 south
-pysaml2

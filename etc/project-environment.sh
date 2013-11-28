@@ -29,4 +29,4 @@ else
     export ELASTICSEARCH_SERVER_URL="http://localhost:50015"
 fi
 
-
+export PYTHONPATH=${PROJECT_HOME_DIR}

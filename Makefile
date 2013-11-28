@@ -34,5 +34,5 @@ collectstatic:
 
 .PHONY: syncdb
 syncdb:
-	django-admin.py syncdb --migrate
-
+	django-admin.py syncdb --noinput
+	django-admin.py migrate
