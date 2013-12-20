@@ -20,7 +20,11 @@ clean: clean-python-virtualenv clean-build
 # below.
 
 include ${PROJECT_HOME_DIR}/.paas-skeleton/makefile.inc
-include ${PROJECT_HOME_DIR}/.paas-skeleton/asciidoc/makefile.inc
+
+# only build docs if you're NOT on openshift
+ifndef OPENSHIFT_REPO_DIR
+	include ${PROJECT_HOME_DIR}/.paas-skeleton/asciidoc/makefile.inc
+endif
 
 # include dependency specific Makefile extensions here, for example
 # include ${PROJECT_HOME_DIR}/.paas-skeleton/python/virtualenv-makefile.inc

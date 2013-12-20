@@ -1,0 +1,1 @@
+export ES_CLASSPATH="${PAAS_SKELETON_WORK_DIR}/share/elasticsearch/lib/*"

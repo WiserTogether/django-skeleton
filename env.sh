@@ -3,5 +3,10 @@
 # do not modify this file outsite paas-skeleton.git
 # see etc/environment.sh for more details
 #
-export PROJECT_HOME_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+if [[ "x${OPENSHIFT_REPO_DIR}x" != "xx" ]]; then
+    PROJECT_HOME_DIR=${OPENSHIFT_REPO_DIR}
+else
+    PROJECT_HOME_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+fi
+export PROJECT_HOME_DIR
 source ${PROJECT_HOME_DIR}/.paas-skeleton/environment.sh
