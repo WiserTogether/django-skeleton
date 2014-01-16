@@ -11,4 +11,4 @@ ${PAAS_SKELETON_WORK_DIR}:
 
 .PHONY: clean-build
 clean-build:
-        if [[ "x$(PROJECT_HOME_DIR)x" != "xx" ]]; then rm -rf $(PROJECT_HOME_DIR)/build; fi
+        if [[ "x${PROJECT_HOME_DIR}x" != "xx" ]]; then rm -rf ${PROJECT_HOME_DIR}/build; fi
