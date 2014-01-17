@@ -2,7 +2,12 @@
 # TODO: make this complain if VIRTUAL_ENV isn't set
 
 VE_FLAGS := --no-site-packages --extra-search-dir=${PROJECT_HOME_DIR}/.paas-skeleton/python/virtualenv_support
-PIP_FLAGS := --quiet --default-timeout=400 --download-cache=${PIP_DOWNLOAD_CACHE} --use-mirrors
+
+# use-mirrors is deprecated http://www.python.org/dev/peps/pep-0449/
+# they use CDN now. We can use index-url to provide our own mirror
+# if we want/need to
+#
+PIP_FLAGS := --quiet --default-timeout=400 --download-cache=${PIP_DOWNLOAD_CACHE}
 
 .PHONY: check-python-virtualenv
 check-python-virtualenv: $(PYTHON_BIN)
