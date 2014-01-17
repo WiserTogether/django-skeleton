@@ -19,5 +19,3 @@ fi
 set --
 
 source ${PROJECT_HOME_DIR}/.paas-skeleton/environment.sh
-
-source ${PROJECT_HOME_DIR}/etc/prepare-gpg.sh
