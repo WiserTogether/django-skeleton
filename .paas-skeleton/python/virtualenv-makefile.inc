@@ -1,10 +1,8 @@
 # .paas-skeleton/python/virtualenv-makefile.inc
 # TODO: make this complain if VIRTUAL_ENV isn't set
-PYTHON_BIN := ${VIRTUAL_ENV}/bin/python
-#VE_FLAGS := --extra-search-dir $(PWD)/lib/buildout-cache/dist --never-download var/ve; fi
+
 VE_FLAGS := --no-site-packages --extra-search-dir=${PROJECT_HOME_DIR}/.paas-skeleton/python/virtualenv_support
 PIP_FLAGS := --quiet --default-timeout=400 --download-cache=${PIP_DOWNLOAD_CACHE} --use-mirrors
-
 
 .PHONY: check-python-virtualenv
 check-python-virtualenv: $(PYTHON_BIN)
