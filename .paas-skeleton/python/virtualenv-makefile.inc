@@ -1,9 +1,13 @@
 # .paas-skeleton/python/virtualenv-makefile.inc
 # TODO: make this complain if VIRTUAL_ENV isn't set
-PYTHON_BIN := ${VIRTUAL_ENV}/bin/python
-#VE_FLAGS := --extra-search-dir $(PWD)/lib/buildout-cache/dist --never-download --use-distribute var/ve; fi
-VE_FLAGS := --use-distribute --no-site-packages --extra-search-dir=${PROJECT_HOME_DIR}/.paas-skeleton/python/virtualenv_support
-PIP_FLAGS := --use-mirrors --quiet
+
+VE_FLAGS := --no-site-packages --extra-search-dir=${PROJECT_HOME_DIR}/.paas-skeleton/python/virtualenv_support
+
+# use-mirrors is deprecated http://www.python.org/dev/peps/pep-0449/
+# they use CDN now. We can use index-url to provide our own mirror
+# if we want/need to
+#
+PIP_FLAGS := --quiet --default-timeout=400 --download-cache=${PIP_DOWNLOAD_CACHE}
 
 .PHONY: check-python-virtualenv
 check-python-virtualenv: $(PYTHON_BIN)
@@ -41,6 +45,6 @@ ${VIRTUAL_ENV}/bin/activate: ${VIRTUAL_ENV}/lib/python2.7/site-packages
 
 .PHONY: clean-python-virtualenv
 clean-python-virtualenv:
-	if [ "x$(VIRTUAL_ENV)x" != "xx" ]; then rm -rf $(VIRTUAL_ENV); fi
+	if [[ "x$(VIRTUAL_ENV)x" != "xx" ]]; then rm -rf $(VIRTUAL_ENV); fi
 
 $(PYTHON_BIN): ${VIRTUAL_ENV}/lib/python2.7/site-packages

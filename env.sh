@@ -9,4 +9,13 @@ else
     PROJECT_HOME_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 fi
 export PROJECT_HOME_DIR
+
+if [[ $1 == "--auto-agree" ]]; then
+    AUTO_AGREE="true"
+else
+    AUTO_AGREE="false"
+fi
+
+set --
+
 source ${PROJECT_HOME_DIR}/.paas-skeleton/environment.sh

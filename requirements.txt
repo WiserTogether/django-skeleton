@@ -1,8 +1,9 @@
-honcho
-gunicorn
-ipython
-ipdb
 django==1.6
 djangorestframework
+gunicorn
+honcho
+ipdb
+ipython
 psycopg2
 south
+supervisor

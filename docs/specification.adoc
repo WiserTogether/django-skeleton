@@ -1,0 +1,163 @@
+= Specification Document
+Part of the paas-skeleton github repository. Copy this template and make
+your own for your project.
+:toc2:
+:toclevels: 1
+:doctype: book
+:backend: html5
+:theme: flask
+:icons: font
+:imagesdir: docs/images
+:data-uri:
+:copycss:
+:source-highlighter: pygments
+
+Authors::
+* Ellen Reynolds <ellen.reynolds@wisertogether.com>
+* Bill Jones <bill.jones@wisertogether.com>
+* Ted Smith <ted.smith@wisertogether.com>
+
+Version History::
+* 20120503 - Draft
+* 20120511 - v 1.0
+
+Document Version::
+20140106 - Updated to AsciiDoc format
+
+
+
+== Problem Statement
+
+'WHAT business problem is this solution trying to solve.'
+
+Brief outline, in a moderate level of specificity, of what the business
+problem or problems this solution is attempting to solve. The problem
+statement sets the stage for the rest of the document by focusing the
+purpose of the work. Every other item in the remaining sections should be
+able to answer the question “How does (this) solve (one of the problems) in
+the problem statement?”
+
+
+== Requirements
+
+'WHAT a solution must DO to solve the business problems and make happy customers.'
+
+List the constraints the solution must satisfy, the results it must deliver,
+and any specific concerns the solution must have as it solves a problem
+given by the problem statement. Remember that this section  is not the place
+to make implementation decisions - what frameworks or technology to use, how
+the solution must be built.
+
+NOTE: Below is a set of example requirements.
+
+. Solution must support both a standalone survey similar to what is
+  currently used today,
+
+. Solution must offer fully customizable user experience to match our
+  branding and the look and feel of our products,
+
+. Solution must communicate over SSL for both user interaction,
+  administration/authoring, and data transfer,
+
+. Solution must allow for a survey to be customized and delivered on-the-fly
+  based on a user’s actions, interactions, or events,
+
+
+. Solution must operate as a standalone application which allows for:
+
+** a well-developed, clearly documented, and relatively stable API for
+   integration,
+
+** a relatively non-technical user to create, modify, update, test and
+   examine results of a survey,
+
+** a program to create and present a survey dynamically,
+
+** a fully brandable user experience which integrates seamlessly into our
+   existing product,
+
+** simple interactive analysis of basic results, demographic, and other high-
+   level metrics,
+
+** access to full survey result details via API in a standard format
+   (.sav/SPSS, .json, .csv, .xml)
+
+
+== Assumptions and Dependencies
+
+'WHAT other things MUST be done for this solution to work, but are separate projects and NOT the responsibility of this project to complete.'
+
+List things which are out of scope of this solution or out of the control of
+this process, but are expected to be in  place for the solution to be
+considered successful.
+
+
+== Implementation
+
+'HOW, in Technicolor and Panavision detail, is the solution implemented so
+that it resolves the problem statement within the context of the
+Requirements, Assumptions, and Dependencies.'
+
+Describe the solution to another developer such that they could pick up this
+document, read it, and understand how and why the solution was implemented
+the way it was. This is the place to surface any architectural surprises or
+sharp edges for the components involved or any safe handling instructions
+for deployments. Can include diagrams, lists, libraries, and/or key
+technical secret sauce ingredients. Any special hardware design, network
+design, security issues, software components, performance considerations,
+other aspects should also be here in this section as well.
+
+=== Information Security Considerations
+
+Security considerations go here - is this code handling/accessing PHI or
+PII? How is the data secured? Is there an API? How is it secured? How is it
+authenticated? Do others (especially  operations staff) need to be worried
+about anything in particular?
+
+=== Environment
+
+Dedicated or abnormal hardware, software, network, or technology impacts go
+here.
+
+=== Availability / Performance / Reliability
+
+If a product must have special monitoring, or have an unusual level of
+availability, list it.
+
+=== API
+
+If the solution provides an API, an overview of the API design and link to
+API documentation should be included in the implementation.
+
+
+== Risks
+
+'WHAT is the specific impact (to the business or technology environment) if this particular implementation  breaks or fails in some way?'
+
+Nearly every project and implementation choice has risks associated with it.
+Some are pretty global and not very useful to discuss (if the server goes
+down the app breaks, if the app dies, customers can’t get on-line). The
+purpose of this section is to demonstrate some thought around what the risks
+are with this solution by briefly outlining them versus other options and
+explain why this option was chosen despite the known risks. Part of this
+discussion includes strategies for reducing the impact of the risks that
+have been identified should they arise.
+
+
+== Scoping and Schedule
+
+'HOW BIG will this be, and HOW LONG will it take?'
+
+IMPORTANT: This is where you will actually state clearly when the project
+is considered *done*. Don't leave that out.
+
+A big part of getting things done and deployed is figuring out how to manage
+the inter-dependencies of work in the business: the availability of people,
+skills,  other components/products needed, and weave that into a plan for
+the overall evolution of the product over time.
+
+A product can be delivered in pieces/phases, with iterated improvements
+being delivered  over time as business demand arises. This section explains
+how the solution would be delivered over time by providing the detail
+necessary to allow others to schedule and manage these various dependencies
+between their projects and this one.

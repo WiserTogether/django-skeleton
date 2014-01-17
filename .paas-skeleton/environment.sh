@@ -9,6 +9,22 @@
 # this file itself
 #
 
+
+# check on presence of a package at system
+source ${PROJECT_HOME_DIR}/.paas-skeleton/detect_os.sh
+# TODO: create etc/systems_packages.sh on all projects that are using .paas-skeleton
+# that file example:
+#
+# # !/bin/bash
+# # List of system pachages for current project
+# PACKAGES_UBUNTU_12_04="postgresql postgresql-contrib libpq-dev swig libncurses5-dev xmlsec1"
+# PACKAGES_UBUNTU_13_10="postgresql postgresql-contrib libpq-dev swig libncurses5-dev xmlsec1 python-m2crypto"
+# PACKAGES_MAC_OS="postgresql postgresql-contrib libpq-dev swig libncurses5-dev xmlsec1"
+
+if [ -f "${PROJECT_HOME_DIR}/etc/systems_packages.sh" ]; then
+    source ${PROJECT_HOME_DIR}/.paas-skeleton/install_packages.sh
+fi
+
 # bail out if we don't know our home directory
 if [[ "x${PROJECT_HOME_DIR}x" == "xx" ]]; then
     echo "PROJECT_HOME_DIR is not set, exiting"
